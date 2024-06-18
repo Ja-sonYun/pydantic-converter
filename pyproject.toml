@@ -1,0 +1,71 @@
+[project]
+name = "pydantic-converter"
+version = "0.1.0"
+description = "Convert pydantic model to other format"
+authors = [
+    { name = "Ja-sonYun", email = "killa30867@gmail.com" }
+]
+dependencies = [
+    "pydantic>2.0",
+    "fire>=0.6.0",
+    "rich>=13.7.1",
+    "pyhumps>=3.8.0",
+]
+readme = "README.md"
+requires-python = ">= 3.9"
+
+[project.scripts]
+pydantic-converter = "pydantic_converter.__main__:run"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = [
+    "ruff>=0.4.1",
+    "pytest>=8.1.1",
+    "mypy>=1.9.0",
+    "tox>=4.14.2",
+]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/pydantic_converter"]
+
+[tool.ruff.lint.isort]
+combine-as-imports = true
+known-first-party = ["pydantic_converter"]
+section-order = ["future", "standard-library", "third-party", "first-party", "local-folder"]
+split-on-trailing-comma = true
+
+[tool.ruff.format]
+quote-style = "double"
+
+[tool.ruff.lint]
+ignore = []
+select = [
+  "C9",
+  "E",
+  "F",
+  "W",
+  "I",
+]
+
+[tool.ruff]
+exclude = [".venv"]
+target-version = "py310"
+include = ["*.py"]
+line-length = 119
+
+[tool.mypy]
+python_version = "3.10"
+warn_return_any = false
+warn_unused_configs = true
+strict = true
+
+[pytest]
+testpaths = ["tests"]

@@ -1,0 +1,37 @@
+name: Linters
+
+on:
+  - push
+  - pull_request
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.11
+
+      - name: Install Rye
+        uses: baptiste0928/cargo-install@v2
+        with:
+          crate: rye
+          git: https://github.com/mitsuhiko/rye
+          branch: main
+
+      - name: Install Dependencies
+        run: rye sync --all-features
+
+      - name: Run Mypy
+        run: rye run mypy .
+
+      - name: Run Ruff check
+        run: rye run ruff check --diff
+
+      - name: Run Ruff format
+        run: rye run ruff format --diff
+
