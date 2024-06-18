@@ -128,9 +128,10 @@ def main(
     path = Path(path)
     output_file = Path(output_file)
 
+    files: list[Path]
     # Recursively find all files in the given path
     if path.is_dir():
-        files = path.rglob("*.py") if recursive else path.glob("*.py")
+        files = list(path.rglob("*.py") if recursive else path.glob("*.py"))
     else:
         files = [path]
 

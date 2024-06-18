@@ -1,6 +1,6 @@
 [project]
 name = "pydantic-converter"
-version = "0.1.0"
+version = "0.1.1"
 description = "Convert pydantic model to other format"
 authors = [
     { name = "Ja-sonYun", email = "killa30867@gmail.com" }
