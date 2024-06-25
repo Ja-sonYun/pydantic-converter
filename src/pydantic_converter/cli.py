@@ -97,6 +97,16 @@ def clean_schemas(schemas: list[dict[str, Any]]) -> list[dict[str, Any]]:
                     once_referenced.add(ref)
                 else:
                     prop.pop("$ref", None)
+        for prop in schema.get("$defs", {}).values():
+            proped = prop.get("properties", {}).values()
+            for prop in proped:
+                prop.pop("title", None)
+                ref = prop.get("$ref")
+                if ref is not None:
+                    if ref not in once_referenced:
+                        once_referenced.add(ref)
+                    else:
+                        prop.pop("$ref", None)
 
     return schemas
 
