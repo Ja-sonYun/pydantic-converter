@@ -15,6 +15,7 @@ pip install pydantic-converter
 You need to install [json-schema-to-typescript](https://github.com/bcherny/json-schema-to-typescript#readme) to use this tool.
 
 ```python
+# sample.py
 from pydantic_converter import schema
 from pydantic import BaseModel
 
@@ -54,6 +55,7 @@ $ pydantic-converter ./ ./output.ts
 ```
 
 ```typescript
+# output.ts
 export Name = string;
 export Age = number;
 export interface User {
