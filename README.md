@@ -55,7 +55,7 @@ $ pydantic-converter ./ ./output.ts
 ```
 
 ```typescript
-# output.ts
+// output.ts
 export Name = string;
 export Age = number;
 export interface User {
