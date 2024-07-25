@@ -1,6 +1,6 @@
 # pydantic-converter
 
-[![Supported Python Versions](https://img.shields.io/pypi/pyversions/pydantic-converter/0.1.6)](https://pypi.org/project/pydantic-converter/) [![PyPI version](https://badge.fury.io/py/pydantic-converter.svg)](https://badge.fury.io/py/pydantic-converter)
+[![Supported Python Versions](https://img.shields.io/pypi/pyversions/pydantic-converter/0.1.4)](https://pypi.org/project/pydantic-converter/) [![PyPI version](https://badge.fury.io/py/pydantic-converter.svg)](https://badge.fury.io/py/pydantic-converter)
 
 Convert pydantic models to other formats like typescript interfaces.
 
