@@ -4,6 +4,11 @@
 
 Convert pydantic models to other formats like typescript interfaces.
 
+> [!WARNING]
+> 
+> If you're looking to convert FastAPI route definitions to TypeScript interfaces, try using [openapi-typescript](https://github.com/openapi-ts/openapi-typescript). You can easily achieve what you want by converting FastAPI's openapi.json to TypeScript interfaces.
+> 
+
 ## Installation
 
 ```bash
